@@ -1,0 +1,915 @@
+Report
+
+List of Modules
+
+Your program consists of the following modules:
+
+1. utilitycode.c / utilitycode.h
+2. arraycode.c / arraycode.h
+3. mathcode.c / mathcode.h
+4. menu.c / menu.h
+5. main.c
+
+Functions per Module
+
+Below is a list of all functions implemented in each module, along with their prototypes.
+
+MODULE: utilitycode.c / utilitycode.h
+int randomInrange(int min, int max);
+
+MODULE: arraycode.c / arraycode.h
+int fillarrayfromkeyboard(int arr[], int size);
+int fillarraywithRandno(int arr[], int size, int min, int max);
+void cleararray(int arr[], int size);
+void arraysort(int arr[], int size);
+void randomizarray(int arr[], int size);
+void printused(int arr[], int size);
+void printall(int arr[], int size);
+int arrayusedcount(int arr[], int size);
+
+MODULE: mathcode.c / mathcode.h
+int arrayminimum(int arr[], int size);
+int arraymaximum(int arr[], int size);
+double arraysaverage(int arr[], int size);
+double arraymedian(int arr[], int size);
+double variancearray(int arr[], int size);
+double stddevarray(int arr[], int size);
+
+MODULE: menu.c / menu.h
+void displayMenu(void);
+void processMenuChoice(int choice, int arr[], int size);
+void showMenu(void);
+void MF1(void);
+void MF2(void);
+void MF3(void);
+
+MODULE: main.c
+int main(void);
+
+Function Specifications
+WF1 – randomInrange()
+
+Description:
+Generates a random integer between two given values (inclusive).
+
+Parameters:
+
+int min: the lower bound of the range
+
+int max: the upper bound of the range
+
+Returns:
+
+A random integer value between min and max.
+
+Special Notes:
+
+Uses the standard rand() function from <stdlib.h>.
+
+Requires srand(time(NULL)) to initialize randomness before use.
+
+WF2 – fillarrayfromkeyboard()
+
+Description:
+Fills an integer array with user-provided values from the keyboard.
+Stops taking input when a negative number is entered.
+
+Parameters:
+
+int arr[]: the array to be filled
+
+int size: the capacity (maximum size) of the array
+
+Returns:
+
+The number of used elements (entered by the user).
+
+Special Notes:
+
+Unused elements are filled with -1.
+
+The function ensures only non-negative numbers are stored.
+
+WF3 – fillarraywithRandno()
+
+Description:
+Fills an integer array with random numbers in a specified range.
+The rest of the array is filled with -1 to mark unused elements.
+
+Parameters:
+
+int arr[]: the array to fill
+
+int size: total capacity of the array
+
+int min: minimum random value
+
+int max: maximum random value
+
+Returns:
+
+The number of used elements filled with random numbers.
+
+Special Notes:
+
+Uses randomInrange() to generate each random number.
+
+WF4 – cleararray()
+
+Description:
+Marks all elements in an array as unused by setting each value to -1.
+
+Parameters:
+
+int arr[]: the array to clear
+
+int size: total number of elements in the array
+
+Returns:
+
+Nothing (void function).
+
+Special Notes:
+
+Used to reset the array before filling it again.
+
+WF5 – arraysort()
+
+Description:
+Sorts the used elements of an integer array in ascending order.
+All unused (-1) elements are kept at the end of the array.
+
+Parameters:
+
+int arr[]: the array to sort
+
+int size: total capacity of the array
+
+Returns:
+
+Nothing (void function).
+
+Special Notes:
+
+Uses the Bubble Sort algorithm.
+
+Only sorts elements that are not -1.
+
+WF6 – randomizarray()
+
+Description:
+Rearranges (shuffles) all used elements in an array into a random order.
+All unused (-1) elements remain at the end of the array.
+
+Parameters:
+
+int arr[]: the array whose elements are to be randomized
+
+int size: total number of elements in the array
+
+Returns:
+
+Nothing (void function).
+
+Special Notes:
+
+Uses the Fisher–Yates shuffle method (simple random swapping).
+
+Each used element changes position randomly, but values are not changed.
+
+WF7 – printused()
+
+Description:
+Displays only the “used” (non -1) elements of an integer array in a formatted list.
+
+Parameters:
+
+int arr[]: the array to be printed
+
+int size: total capacity of the array
+
+Returns:
+
+Nothing (void function).
+
+Special Notes:
+
+Printed format: {n1, n2, n3, …, n}
+
+If no used elements exist, prints {} (empty set).
+
+WF8 – printall()
+
+Description:
+Displays all elements of the array, including unused (-1) ones.
+
+Parameters:
+
+int arr[]: the array to be printed
+
+int size: total capacity of the array
+
+Returns:
+
+Nothing (void function).
+
+Special Notes:
+
+Printed format: {n1, n2, n3, …, n}
+
+Used elements show actual values, unused ones display -1.
+
+WF9 – arrayminimum()
+
+Description:
+Finds and returns the smallest used value in the array.
+
+Parameters:
+
+int arr[]: the array to search
+
+int size: total capacity of the array
+
+Returns:
+
+The smallest integer value in the array (excluding -1).
+
+Special Notes:
+
+If all elements are unused (-1), the function should return 0 or handle gracefully.
+
+WF10 – arraymaximum()
+
+Description:
+Finds and returns the largest used value in the array.
+
+Parameters:
+
+int arr[]: the array to search
+
+int size: total capacity of the array
+
+Returns:
+
+The largest integer value in the array (excluding -1).
+
+Special Notes:
+
+Ignores all unused elements.
+
+Works correctly even if only one element is used.
+
+WF11 – arraysaverage()
+
+Description:
+Calculates and returns the average (mean) value of all used elements in an array.
+Unused elements (-1) are ignored in the calculation.
+
+Parameters:
+
+int arr[]: the array to compute the average from
+
+int size: total number of elements in the array
+
+Returns:
+
+The average value as a double.
+
+Special Notes:
+
+Returns 0.0 if there are no used elements.
+
+WF12 – arraymedian()
+
+Description:
+Computes and returns the median value of the used elements in the array.
+The median is the middle number after sorting the used values.
+
+Parameters:
+
+int arr[]: the array to compute the median from
+
+int size: total number of elements in the array
+
+Returns:
+
+The median as a double.
+
+Special Notes:
+
+If there is an odd number of used elements, returns the middle one.
+
+If there is an even number, returns the average of the two middle values.
+
+Ignores all unused (-1) elements.
+
+WF13 – variancearray()
+
+Description:
+Calculates and returns the variance of the used elements in an array.
+Variance shows how far the numbers are spread out from the average.
+
+Parameters:
+
+int arr[]: the array to compute the variance from
+
+int size: total number of elements in the array
+
+Returns:
+
+The variance as a double.
+
+Special Notes:
+
+Ignores unused (-1) elements.
+
+​where avg = mean of used elements and N = number of used elements.
+
+WF14 – stddevarray()
+
+Description:
+Computes and returns the standard deviation of the used elements in the array.
+It measures the spread of the data from the mean.
+
+Parameters:
+
+int arr[]: the array to compute from
+
+int size: total number of elements in the array
+
+Returns:
+
+The standard deviation as a double.
+​
+
+Uses the sqrt() function from <math.h>.
+
+WF15 – arrayusedcount()
+
+Description:
+Counts how many used elements (values not equal to -1) are in the array.
+
+Parameters:
+
+int arr[]: the array to check
+
+int size: total number of elements in the array
+
+Returns:
+
+The number of used elements as an int.
+
+Special Notes:
+
+Returns 0 if all elements are unused.
+
+Often used by other functions to determine the number of valid values.
+Function Specifications – Menu Module (menu.c / menu.h)
+
+Function: displayMenu()
+
+Prototype:
+
+void displayMenu(void);
+
+
+Purpose:
+Displays all available menu options to the user.
+
+Input Parameters:
+None.
+
+Return Value:
+None.
+
+Detailed Description:
+This function prints a four-item numbered menu to the console.
+Options include executing MF1, MF2, MF3, or exiting the program.
+It does not read user input; it only displays the menu text.
+
+Function: processMenu(int choice)
+
+Prototype:
+
+void processMenu(int choice);
+
+
+Purpose:
+Executes the correct menu function based on the user’s numerical input.
+
+Input Parameters:
+
+choice – an integer representing the user’s selected menu option.
+
+Return Value:
+None.
+
+Detailed Description:
+This function takes the user’s menu selection and calls the matching menu function:
+
+1 → calls MF1()
+
+2 → calls MF2()
+
+3 → calls MF3()
+
+4 → terminates the program
+If any other value is supplied, the function prints an “invalid choice” error message.
+
+Function: showMenu()
+
+Prototype:
+
+void showMenu(void);
+
+
+Purpose:
+Controls the main loop of the menu-driven application.
+
+Input Parameters:
+None.
+
+Return Value:
+None.
+
+Detailed Description:
+This function repeatedly displays the main menu, reads the user’s numeric selection,
+and processes the choice using processMenu().
+The loop continues until the user enters 4, which ends the program.
+All standard input redirection for automated testing (input.txt) is handled naturally by this loop.
+
+Function: MF1()
+
+Prototype:
+
+void MF1(void);
+
+
+Purpose:
+Demonstrates basic array functionality using the “working functions” WF3–WF10.
+
+Input Parameters:
+None.
+
+Return Value:
+None.
+
+Detailed Description:
+This function performs the following sequence (as required in the assignment):
+
+Creates an array of capacity 10.
+
+Uses WF3 to fill the first 7 positions with random integers in the range 10–20.
+
+Uses WF7 to print only used elements.
+
+Uses WF8 to print all elements.
+
+Uses WF4 to clear the array.
+
+Prints used elements (expected to be empty).
+
+Prints all elements (expected to show all UNUSED).
+
+Uses WF3 to refill the array with 5 random integers in the range 20–30.
+
+Uses WF5 to sort the array.
+
+Uses WF8 to print all elements.
+
+Prints minimum and maximum values using WF9 and WF10.
+
+Function: MF2()
+
+Prototype:
+
+void MF2(void);
+
+
+Purpose:
+Shows sorting and randomizing of arrays using WF3, WF5, WF6, and WF8.
+
+Input Parameters:
+None.
+
+Return Value:
+None.
+
+Detailed Description:
+This function:
+
+Creates an array of capacity 20.
+
+Fills the first 15 positions with random integers from 10–20 (WF3).
+
+Prints all elements (WF8).
+
+Sorts the array (WF5).
+
+Prints all elements again (WF8).
+
+Randomizes the array (WF6).
+
+Prints all elements again (WF8).
+
+Function: MF3()
+
+Prototype:
+
+void MF3(void);
+
+
+Purpose:
+Performs statistical calculations based on user input.
+
+Input Parameters:
+None.
+
+Return Value:
+None.
+
+Detailed Description:
+MF3 demonstrates the use of user-entered data combined with all math-related working functions.
+It performs:
+
+Creates an array of capacity 100.
+
+Uses WF2 to let the user input values until a negative number is entered.
+
+Prints minimum and maximum values using WF9 and WF10.
+
+Prints the array of used elements.
+
+Prints average and median using WF11 and WF12.
+
+Computes variance and standard deviation using WF13 and WF14.
+
+Displays all results in the required assignment format.
+
+Pseudocode Representations
+WF1 – randomInrange()
+
+First Iteration:
+
+Generate a random integer within a specified range.
+
+Return the random number.
+
+Second Iteration:
+
+Use rand() to get a random integer value.
+
+Compute range = max − min + 1.
+
+Calculate number = (rand() % range) + min.
+
+Return number.
+
+WF2 – fillarrayfromkeyboard()
+
+First Iteration:
+
+Read numbers from keyboard and store them in the array.
+
+Stop when a negative number is entered.
+
+Mark all remaining elements as −1.
+
+Return the number of used elements.
+
+Second Iteration:
+
+Set count = 0.
+
+Repeat while count < capacity:
+ a. Ask user to enter a value.
+ b. If value < 0 → exit loop.
+ c. Else store value in arr[count].
+ d. Increment count.
+
+For each remaining element from count to size−1, set arr[i] = −1.
+
+Return count.
+
+WF3 – fillarraywithRandno()
+
+First Iteration:
+
+Fill the array with random integers within a specified range.
+
+Mark unused elements as −1.
+
+Return the number of used elements.
+
+Second Iteration:
+
+Set count = 0.
+
+Repeat while count < size:
+ a. Generate random number = randomInrange(min, max).
+ b. Store in arr[count].
+ c. Increment count.
+
+Set remaining elements to −1.
+
+Return count.
+
+WF4 – cleararray()
+
+First Iteration:
+
+Mark all elements as unused.
+
+Second Iteration:
+
+For each element in array from 0 to size−1:
+ a. Set arr[i] = −1.
+
+End loop.
+
+WF5 – arraysort()
+
+First Iteration:
+
+Sort the used elements in ascending order.
+
+Keep unused elements (−1) at the end of the array.
+
+Second Iteration:
+
+Determine usedCount = number of elements ≠ −1.
+
+For i = 0 to usedCount − 1:
+ a. For j = 0 to usedCount − i − 2:
+  i. If arr[j] > arr[j+1], swap them.
+ b. End inner loop.
+
+End outer loop.
+
+Leave remaining unused elements (−1) at the end.
+
+WF6 – randomizarray()
+
+First Iteration:
+
+Randomly rearrange all used elements in the array.
+
+Keep all unused (−1) elements at the end.
+
+Second Iteration:
+
+Count how many elements are used (≠ −1).
+
+For i = usedCount − 1 down to 1:
+ a. Generate random j = rand() % (i + 1).
+ b. Swap arr[i] and arr[j].
+
+End loop.
+
+Leave unused (−1) elements unchanged at the end.
+
+WF7 – printused()
+
+First Iteration:
+
+Display all used (≠ −1) elements of the array in braces { }.
+
+Second Iteration:
+
+Print “{”.
+
+For each element in the array:
+ a. If arr[i] != −1, print arr[i].
+ b. If it’s not the last used element, print “, ”.
+
+Print “}”.
+
+If no used elements exist, print “{}”.
+
+WF8 – printall()
+
+First Iteration:
+
+Display all elements of the array, including unused (−1) markers.
+
+Second Iteration:
+
+Print “{”.
+
+For i = 0 to size − 1:
+ a. Print arr[i].
+ b. If not last element, print “, ”.
+
+Print “}”.
+
+WF9 – arrayminimum()
+
+First Iteration:
+
+Find the smallest used value in the array.
+
+Second Iteration:
+
+Set min = first used element.
+
+For each element in array:
+ a. If arr[i] != −1 and arr[i] < min, then min = arr[i].
+
+Return min.
+
+If all elements are −1, return 0 (or handle error).
+
+WF10 – arraymaximum()
+
+First Iteration:
+
+Find the largest used value in the array.
+
+Second Iteration:
+
+Set max = first used element.
+
+For each element in array:
+ a. If arr[i] != −1 and arr[i] > max, then max = arr[i].
+
+Return max.
+
+Ignore all −1 values.
+WF11 – arraysaverage()
+
+First Iteration:
+
+Calculate and return the average value of all used (≠ −1) elements in the array.
+
+Second Iteration:
+
+Set sum = 0, count = 0.
+
+For each element in array:
+ a. If arr[i] != −1:
+  i. Add arr[i] to sum.
+  ii. Increment count.
+
+If count > 0, return sum / count.
+
+Else, return 0.0.
+
+WF12 – arraymedian()
+
+First Iteration:
+
+Return the median value of all used (≠ −1) elements in the array.
+
+Second Iteration:
+
+Copy all used elements into a temporary array.
+
+Sort this temporary array in ascending order.
+
+Determine the number of used elements n.
+
+If n is odd, median = element at position n/2.
+
+If n is even, median = average of elements at positions (n/2) - 1 and n/2.
+
+Return the median value as a double.
+
+WF13 – variancearray()
+
+First Iteration:
+
+Compute the variance of all used (≠ −1) elements in the array.
+
+Second Iteration:
+
+Calculate the average (mean) of all used elements.
+
+Initialize sumSqDiff = 0, count = 0.
+
+For each element:
+ a. If arr[i] != −1:
+  i. Add (arr[i] − avg)² to sumSqDiff.
+  ii. Increment count.
+
+Compute variance = sumSqDiff / count.
+
+Return variance as a double.
+
+WF14 – stddevarray()
+
+First Iteration:
+
+Compute and return the standard deviation of the used elements.
+
+Second Iteration:
+
+Calculate the variance using variancearray().
+
+Compute stddev = sqrt(variance).
+
+Return stddev as a double.
+
+WF15 – arrayusedcount()
+
+First Iteration:
+
+Count and return how many used elements exist in the array.
+
+Second Iteration:
+
+Set count = 0.
+
+For each element in array:
+ a. If arr[i] != −1, increment count.
+
+Return count.
+
+Pseudocode for menu
+
+Provide a text-driven menu that repeatedly performs MF1, MF2, or MF3
+until the user chooses to exit.
+
+FIRST REFINEMENT
+1. Display the menu options
+2. Read the user’s choice
+3. Process the selected menu option
+4. Repeat until the user selects exit
+
+SECOND REFINEMENT
+
+Refining step 3 (“Process the selected menu option”):
+
+1. Display the menu options
+2. Input user choice
+3. If choice = 1
+        perform MF1
+   Else if choice = 2
+        perform MF2
+   Else if choice = 3
+        perform MF3
+   Else if choice = 4
+        exit the program
+   Else
+        print "Invalid choice"
+4. Repeat until choice = 4
+
+THIRD REFINEMENT (FULL PSEUDOCODE WITH ITERATION + INPUT + DECISIONS)
+
+(this is the final version for your report)
+
+1. Set choice to 0
+
+2. While choice is not equal to 4
+   1 Display:
+   1) Perform MF1”
+   2) Perform MF2”
+   3) Perform MF3”
+   4) Exit Application”
+   Please enter your choice:”
+
+   2 Input choice
+
+   3 If choice equals 1
+               Print “Perform MF1”
+               Call MF1
+          Else if choice equals 2
+               Print “Perform MF2”
+               Call MF2
+          Else if choice equals 3
+               Print “Perform MF3”
+               Call MF3
+          Else if choice equals 4
+               Print “Exiting…”
+          Else
+               Print “Invalid choice – enter 1 to 4”
+
+MF1 – Pseudocode
+1. Clear array (set all to UNUSED)
+2. Fill 7 random numbers between 10 and 20
+3. Print used elements
+4. Print all elements
+5. Clear array again
+6. Print used elements
+7. Print all elements
+8. Fill 5 random numbers between 20 and 30
+9. Sort array
+10. Print all elements
+11. Print min and max
+
+MF2 – Pseudocode
+1. Fill array with 20 random numbers (10–20)
+2. Print all elements
+3. Sort array
+4. Print all elements
+5. Randomize array
+6. Print all elements
+
+MF3 – Pseudocode
+1. Input values until user enters negative number
+2. Determine number of used elements
+3. Compute min and max
+4. Compute average
+5. Compute median
+6. Compute variance
+7. Compute standard deviation
+8. Print all results

@@ -1,0 +1,171 @@
+\doxysection{C\+:/\+Users/roshe/source/repos/\+Assiment-\/\+Roshen/\+Assiment-\/\+Roshen/\+Mathcode.c File Reference}
+\hypertarget{_mathcode_8c}{}\label{_mathcode_8c}\index{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/Mathcode.c@{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/Mathcode.c}}
+
+
+Implements the mathematical Working Functions (WF9–\+WF14).  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}Arraycode.\+h"{}}\newline
+{\ttfamily \#include "{}Mathcode.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_mathcode_8c_afea3f6ecee35b136d7a4877de755a73c}{arrayminimum}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Finds the smallest used element in an array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_mathcode_8c_a2b78224f707fb8f3dd16b288cf87172f}{arraymaximum}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Finds the largest used element in an array. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_mathcode_8c_ae0b255b7cbc88f5beb955b05e6648328}{arraysaverage}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Calculates the average (mean) of used elements in an array. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_mathcode_8c_aa03fad71d41635d3a58593cac426fbb2}{arraymedian}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Calculates the median of used elements in an array. Assumes the array has already been sorted. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_mathcode_8c_ad0cbfb878d0f3727db88a85151a04a46}{variancearray}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Calculates the variance of used elements in an array. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_mathcode_8c_aaa41e5a878830de2efb6d1d19e8d3408}{standevarray}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Calculates the standard deviation of used elements in an array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the mathematical Working Functions (WF9–\+WF14). 
+
+This module contains all statistical and mathematical operations used by the array system. These functions operate only on "{}used"{} array elements, where unused values are marked with the UNUSED macro (-\/1). The functions implemented include\+:
+
+
+\begin{DoxyItemize}
+\item arraymin() (WF9)
+\item arraymax() (WF10)
+\item \doxylink{_mathcode_8c_ae0b255b7cbc88f5beb955b05e6648328}{arraysaverage()} (WF11)
+\item \doxylink{_mathcode_8c_aa03fad71d41635d3a58593cac426fbb2}{arraymedian()} (WF12)
+\item \doxylink{_mathcode_8c_ad0cbfb878d0f3727db88a85151a04a46}{variancearray()} (WF13)
+\item \doxylink{_mathcode_8c_aaa41e5a878830de2efb6d1d19e8d3408}{standevarray()} (WF14)
+\end{DoxyItemize}
+
+These functions are invoked primarily by MF3 in the menu system. 
+
+\label{doc-func-members}
+\Hypertarget{_mathcode_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_mathcode_8c_a2b78224f707fb8f3dd16b288cf87172f}\index{Mathcode.c@{Mathcode.c}!arraymaximum@{arraymaximum}}
+\index{arraymaximum@{arraymaximum}!Mathcode.c@{Mathcode.c}}
+\doxysubsubsection{\texorpdfstring{arraymaximum()}{arraymaximum()}}
+{\footnotesize\ttfamily \label{_mathcode_8c_a2b78224f707fb8f3dd16b288cf87172f} 
+int arraymaximum (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Finds the largest used element in an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to inspect. \\
+\hline
+{\em size} & Capacity of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Largest used value, or UNUSED if array has no used values. 
+\end{DoxyReturn}
+\Hypertarget{_mathcode_8c_aa03fad71d41635d3a58593cac426fbb2}\index{Mathcode.c@{Mathcode.c}!arraymedian@{arraymedian}}
+\index{arraymedian@{arraymedian}!Mathcode.c@{Mathcode.c}}
+\doxysubsubsection{\texorpdfstring{arraymedian()}{arraymedian()}}
+{\footnotesize\ttfamily \label{_mathcode_8c_aa03fad71d41635d3a58593cac426fbb2} 
+double arraymedian (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the median of used elements in an array. Assumes the array has already been sorted. 
+
+Calculates the median value of used elements in an array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to examine. \\
+\hline
+{\em size} & Total capacity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Median value as double.
+\end{DoxyReturn}
+A copy of the used elements is made and sorted, so the original array remains unchanged. Handles both even and odd element counts. \Hypertarget{_mathcode_8c_afea3f6ecee35b136d7a4877de755a73c}\index{Mathcode.c@{Mathcode.c}!arrayminimum@{arrayminimum}}
+\index{arrayminimum@{arrayminimum}!Mathcode.c@{Mathcode.c}}
+\doxysubsubsection{\texorpdfstring{arrayminimum()}{arrayminimum()}}
+{\footnotesize\ttfamily \label{_mathcode_8c_afea3f6ecee35b136d7a4877de755a73c} 
+int arrayminimum (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Finds the smallest used element in an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to inspect. \\
+\hline
+{\em size} & Capacity of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The smallest used value, or UNUSED (-\/1) if no used values exist.
+\end{DoxyReturn}
+Only values before the first UNUSED marker are considered. \Hypertarget{_mathcode_8c_ae0b255b7cbc88f5beb955b05e6648328}\index{Mathcode.c@{Mathcode.c}!arraysaverage@{arraysaverage}}
+\index{arraysaverage@{arraysaverage}!Mathcode.c@{Mathcode.c}}
+\doxysubsubsection{\texorpdfstring{arraysaverage()}{arraysaverage()}}
+{\footnotesize\ttfamily \label{_mathcode_8c_ae0b255b7cbc88f5beb955b05e6648328} 
+double arraysaverage (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the average (mean) of used elements in an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array with values. \\
+\hline
+{\em size} & Total capacity of the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Average (double), or 0.\+0 if array has no used elements.
+\end{DoxyReturn}
+Ignores all UNUSED elements at the end of the array. \Hypertarget{_mathcode_8c_aaa41e5a878830de2efb6d1d19e8d3408}\index{Mathcode.c@{Mathcode.c}!standevarray@{standevarray}}
+\index{standevarray@{standevarray}!Mathcode.c@{Mathcode.c}}
+\doxysubsubsection{\texorpdfstring{standevarray()}{standevarray()}}
+{\footnotesize\ttfamily \label{_mathcode_8c_aaa41e5a878830de2efb6d1d19e8d3408} 
+double standevarray (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the standard deviation of used elements in an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to examine. \\
+\hline
+{\em size} & Total array capacity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Standard deviation as double.
+\end{DoxyReturn}
+Standard deviation = sqrt(variance) \Hypertarget{_mathcode_8c_ad0cbfb878d0f3727db88a85151a04a46}\index{Mathcode.c@{Mathcode.c}!variancearray@{variancearray}}
+\index{variancearray@{variancearray}!Mathcode.c@{Mathcode.c}}
+\doxysubsubsection{\texorpdfstring{variancearray()}{variancearray()}}
+{\footnotesize\ttfamily \label{_mathcode_8c_ad0cbfb878d0f3727db88a85151a04a46} 
+double variancearray (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the variance of used elements in an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to analyse. \\
+\hline
+{\em size} & Total capacity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Variance as a double.
+\end{DoxyReturn}
+Formula\+: variance = Σ (xi -\/ mean)² / N 

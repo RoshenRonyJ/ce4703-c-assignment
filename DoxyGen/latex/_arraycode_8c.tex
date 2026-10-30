@@ -1,0 +1,205 @@
+\doxysection{C\+:/\+Users/roshe/source/repos/\+Assiment-\/\+Roshen/\+Assiment-\/\+Roshen/\+Arraycode.c File Reference}
+\hypertarget{_arraycode_8c}{}\label{_arraycode_8c}\index{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/Arraycode.c@{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/Arraycode.c}}
+
+
+Implements all Working Functions (WF2–\+WF15) for array manipulation.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}Arraycode.\+h"{}}\newline
+{\ttfamily \#include "{}utilitycode.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_arraycode_8c_ac00b8cfdda0364c47805e0630209354f}{fillarrayfromkeyboard}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Fills an array with values entered by the user. Stops when user enters a negative number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_arraycode_8c_afdc91fb4d3e02b32aac27b2ead725923}{fillarraywith\+Randno}} (int arr\mbox{[}$\,$\mbox{]}, int size, int lower, int upper)
+\begin{DoxyCompactList}\small\item\em Fills an array with random numbers in a range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_arraycode_8c_a9fe94f1c68ad328a18c7e5c67ac3f4ef}{cleararray}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Clears all elements in an array by setting them to UNUSED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_arraycode_8c_ae4c8a52d8e4c4bb415a0f4dd76374b98}{arraysort}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Sorts used elements of an array in ascending order using bubble sort. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_arraycode_8c_aee0ed75b352ca709ec9213a00e450a8c}{randomizarray}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Randomly rearranges used elements of the array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_arraycode_8c_acd84b4e6edfdd1e7549e452f5df51dd9}{printused}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Prints only used (non-\/\+UNUSED) elements of the array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_arraycode_8c_afcb33521ea594e97362fd26764aec339}{printall}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Prints all elements, including UNUSED values. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_arraycode_8c_aca9c4f8f92c8d1130b37063968bcdd05}{arrayusedno}} (int arr\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Counts how many used elements are in the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements all Working Functions (WF2–\+WF15) for array manipulation. 
+
+This module contains every low-\/level operation required for the assignment\+: keyboard input, random filling, clearing, sorting, printing, randomizing, statistics, and counting used elements.
+
+Unused array positions are represented by the {\ttfamily UNUSED} macro (-\/1), and many functions operate only on used elements (i.\+e., values not equal to UNUSED). 
+
+\label{doc-func-members}
+\Hypertarget{_arraycode_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_arraycode_8c_ae4c8a52d8e4c4bb415a0f4dd76374b98}\index{Arraycode.c@{Arraycode.c}!arraysort@{arraysort}}
+\index{arraysort@{arraysort}!Arraycode.c@{Arraycode.c}}
+\doxysubsubsection{\texorpdfstring{arraysort()}{arraysort()}}
+{\footnotesize\ttfamily \label{_arraycode_8c_ae4c8a52d8e4c4bb415a0f4dd76374b98} 
+void arraysort (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Sorts used elements of an array in ascending order using bubble sort. 
+
+Sorts the used elements of the array in ascending order.
+
+Only values not equal to UNUSED are sorted. Bubble sort is used for simplicity (not efficiency).
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to sort. \\
+\hline
+{\em size} & Capacity of the array. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_arraycode_8c_aca9c4f8f92c8d1130b37063968bcdd05}\index{Arraycode.c@{Arraycode.c}!arrayusedno@{arrayusedno}}
+\index{arrayusedno@{arrayusedno}!Arraycode.c@{Arraycode.c}}
+\doxysubsubsection{\texorpdfstring{arrayusedno()}{arrayusedno()}}
+{\footnotesize\ttfamily \label{_arraycode_8c_aca9c4f8f92c8d1130b37063968bcdd05} 
+int arrayusedno (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Counts how many used elements are in the array. 
+
+\begin{DoxyReturn}{Returns}
+Number of used elements. 
+\end{DoxyReturn}
+\Hypertarget{_arraycode_8c_a9fe94f1c68ad328a18c7e5c67ac3f4ef}\index{Arraycode.c@{Arraycode.c}!cleararray@{cleararray}}
+\index{cleararray@{cleararray}!Arraycode.c@{Arraycode.c}}
+\doxysubsubsection{\texorpdfstring{cleararray()}{cleararray()}}
+{\footnotesize\ttfamily \label{_arraycode_8c_a9fe94f1c68ad328a18c7e5c67ac3f4ef} 
+void cleararray (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Clears all elements in an array by setting them to UNUSED. 
+
+Clears all elements of an array (sets them to UNUSED).
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to clear. \\
+\hline
+{\em size} & The array capacity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_arraycode_8c_ac00b8cfdda0364c47805e0630209354f}\index{Arraycode.c@{Arraycode.c}!fillarrayfromkeyboard@{fillarrayfromkeyboard}}
+\index{fillarrayfromkeyboard@{fillarrayfromkeyboard}!Arraycode.c@{Arraycode.c}}
+\doxysubsubsection{\texorpdfstring{fillarrayfromkeyboard()}{fillarrayfromkeyboard()}}
+{\footnotesize\ttfamily \label{_arraycode_8c_ac00b8cfdda0364c47805e0630209354f} 
+int fillarrayfromkeyboard (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Fills an array with values entered by the user. Stops when user enters a negative number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to fill. \\
+\hline
+{\em size} & The maximum number of elements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of used elements. 
+\end{DoxyReturn}
+\Hypertarget{_arraycode_8c_afdc91fb4d3e02b32aac27b2ead725923}\index{Arraycode.c@{Arraycode.c}!fillarraywithRandno@{fillarraywithRandno}}
+\index{fillarraywithRandno@{fillarraywithRandno}!Arraycode.c@{Arraycode.c}}
+\doxysubsubsection{\texorpdfstring{fillarraywithRandno()}{fillarraywithRandno()}}
+{\footnotesize\ttfamily \label{_arraycode_8c_afdc91fb4d3e02b32aac27b2ead725923} 
+int fillarraywith\+Randno (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{, }\item[{int}]{lower}{, }\item[{int}]{upper}{}\end{DoxyParamCaption})}
+
+
+
+Fills an array with random numbers in a range. 
+
+Fills an array with random numbers between min and max.
+
+
+\begin{DoxyItemize}
+\item Sets all array positions to UNUSED first, then fills the first {\ttfamily size} positions with random integers between {\ttfamily lower} and {\ttfamily upper}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to update. \\
+\hline
+{\em size} & Number of elements to fill. \\
+\hline
+{\em lower} & Lower bound for random numbers. \\
+\hline
+{\em upper} & Upper bound for random numbers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The count of used elements. 
+\end{DoxyReturn}
+\Hypertarget{_arraycode_8c_afcb33521ea594e97362fd26764aec339}\index{Arraycode.c@{Arraycode.c}!printall@{printall}}
+\index{printall@{printall}!Arraycode.c@{Arraycode.c}}
+\doxysubsubsection{\texorpdfstring{printall()}{printall()}}
+{\footnotesize\ttfamily \label{_arraycode_8c_afcb33521ea594e97362fd26764aec339} 
+void printall (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Prints all elements, including UNUSED values. 
+
+Prints all elements of an array, including UNUSED ones.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Array to print. \\
+\hline
+{\em size} & Capacity.\\
+\hline
+\end{DoxyParams}
+Output format\+: \{n1, n2, -\/1, -\/1\} \Hypertarget{_arraycode_8c_acd84b4e6edfdd1e7549e452f5df51dd9}\index{Arraycode.c@{Arraycode.c}!printused@{printused}}
+\index{printused@{printused}!Arraycode.c@{Arraycode.c}}
+\doxysubsubsection{\texorpdfstring{printused()}{printused()}}
+{\footnotesize\ttfamily \label{_arraycode_8c_acd84b4e6edfdd1e7549e452f5df51dd9} 
+void printused (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Prints only used (non-\/\+UNUSED) elements of the array. 
+
+Prints only the used elements of an array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Array to print. \\
+\hline
+{\em size} & Capacity.\\
+\hline
+\end{DoxyParams}
+Output format\+: \{n1, n2, n3\} Empty array prints\+: \{\} \Hypertarget{_arraycode_8c_aee0ed75b352ca709ec9213a00e450a8c}\index{Arraycode.c@{Arraycode.c}!randomizarray@{randomizarray}}
+\index{randomizarray@{randomizarray}!Arraycode.c@{Arraycode.c}}
+\doxysubsubsection{\texorpdfstring{randomizarray()}{randomizarray()}}
+{\footnotesize\ttfamily \label{_arraycode_8c_aee0ed75b352ca709ec9213a00e450a8c} 
+void randomizarray (\begin{DoxyParamCaption}\item[{int}]{arr}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Randomly rearranges used elements of the array. 
+
+Randomly rearranges the used elements of the array.
+
+Uses Fisher–\+Yates shuffle on only the used elements. Unused elements remain at the end of the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & The array to shuffle. \\
+\hline
+{\em size} & Array capacity. \\
+\hline
+\end{DoxyParams}

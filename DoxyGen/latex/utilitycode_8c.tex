@@ -1,0 +1,68 @@
+\doxysection{C\+:/\+Users/roshe/source/repos/\+Assiment-\/\+Roshen/\+Assiment-\/\+Roshen/utilitycode.c File Reference}
+\hypertarget{utilitycode_8c}{}\label{utilitycode_8c}\index{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/utilitycode.c@{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/utilitycode.c}}
+
+
+Implements utility helper functions used throughout the program.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}utilitycode.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{utilitycode_8c_a5a34462b1d49ae892a343e5130d20a3c}{seed\+Random}} (void)
+\begin{DoxyCompactList}\small\item\em Seeds the random number generator using the current time. This should be called once in main() before any random functions are used. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utilitycode_8c_a26927eafc4b6c937b626631935e6e9b7}{random\+Inrange}} (int lower, int upper)
+\begin{DoxyCompactList}\small\item\em Generates a random integer within a given range \mbox{[}lower, upper\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements utility helper functions used throughout the program. 
+
+This module currently contains the random number generator used by several Working Functions such as WF3 (fill with random numbers) and WF6 (randomize array). Additional utility functions may be added as needed. 
+
+\label{doc-func-members}
+\Hypertarget{utilitycode_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{utilitycode_8c_a26927eafc4b6c937b626631935e6e9b7}\index{utilitycode.c@{utilitycode.c}!randomInrange@{randomInrange}}
+\index{randomInrange@{randomInrange}!utilitycode.c@{utilitycode.c}}
+\doxysubsubsection{\texorpdfstring{randomInrange()}{randomInrange()}}
+{\footnotesize\ttfamily \label{utilitycode_8c_a26927eafc4b6c937b626631935e6e9b7} 
+int random\+Inrange (\begin{DoxyParamCaption}\item[{int}]{lower}{, }\item[{int}]{upper}{}\end{DoxyParamCaption})}
+
+
+
+Generates a random integer within a given range \mbox{[}lower, upper\mbox{]}. 
+
+Generates a random number within a specified range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower} & The minimum integer value (inclusive). \\
+\hline
+{\em upper} & The maximum integer value (inclusive). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A random number between lower and upper. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Used by\+:
+\begin{DoxyItemize}
+\item WF3 \+: \doxylink{_arraycode_8c_afdc91fb4d3e02b32aac27b2ead725923}{fillarraywith\+Randno()}
+\item WF6 \+: randomizearray() 
+\end{DoxyItemize}
+\end{DoxyNote}
+\Hypertarget{utilitycode_8c_a5a34462b1d49ae892a343e5130d20a3c}\index{utilitycode.c@{utilitycode.c}!seedRandom@{seedRandom}}
+\index{seedRandom@{seedRandom}!utilitycode.c@{utilitycode.c}}
+\doxysubsubsection{\texorpdfstring{seedRandom()}{seedRandom()}}
+{\footnotesize\ttfamily \label{utilitycode_8c_a5a34462b1d49ae892a343e5130d20a3c} 
+void seed\+Random (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Seeds the random number generator using the current time. This should be called once in main() before any random functions are used. 
+
+Seeds the random number generator using current time. 

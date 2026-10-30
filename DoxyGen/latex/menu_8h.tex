@@ -1,0 +1,235 @@
+\doxysection{C\+:/\+Users/roshe/source/repos/\+Assiment-\/\+Roshen/\+Assiment-\/\+Roshen/menu.h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/menu.h@{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/menu.h}}
+
+
+Declares the menu system and high-\/level menu functions (MF1‚Äì\+MF3).  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}Arraycode.\+h"{}}\newline
+{\ttfamily \#include "{}Utilitycode.\+h"{}}\newline
+{\ttfamily \#include "{}Mathcode.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a9c57b99552cfba7791690c8f57fd3e97}{display\+Menu}} (void)
+\begin{DoxyCompactList}\small\item\em Displays the main menu with available options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_ac7c402706bcd7864f8749eb85d7b17d1}{process\+Menu}} (int choice)
+\begin{DoxyCompactList}\small\item\em Handles the user\textquotesingle{}s choice and performs the corresponding action. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a9e496ae046ce217b202718937e53dd51}{show\+Menu}} (void)
+\begin{DoxyCompactList}\small\item\em Runs the main menu loop that keeps the program active until exit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_ad09b68562d4d3f73fc80bbba617dfcb5}{MF1}} (void)
+\begin{DoxyCompactList}\small\item\em Performs the operations defined for MF1. Typically\+: filling arrays, clearing, sorting, and finding min/max. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a64d2417be94e4f4078733a76174a4472}{MF2}} (void)
+\begin{DoxyCompactList}\small\item\em Performs the operations defined for MF2. Typically\+: randomizing and sorting array values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a18f29bae1fdb45ccfc087beed961dd5f}{MF3}} (void)
+\begin{DoxyCompactList}\small\item\em Performs the operations defined for MF3. Typically\+: keyboard input and computing statistical values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares the menu system and high-\/level menu functions (MF1‚Äì\+MF3). 
+
+This header file provides the interface to the application‚Äôs user-\/interaction layer. The functions declared here are implemented in \doxylink{menu_8c}{menu.\+c} and control the overall flow of the program. These functions call Working Functions (WF1‚Äì\+WF15) to perform operations such as filling, clearing, sorting, and analysing arrays.
+
+Functions included\+:
+\begin{DoxyItemize}
+\item \doxylink{menu_8h_a9c57b99552cfba7791690c8f57fd3e97}{display\+Menu()} \+: Prints available menu options.
+\item \doxylink{menu_8h_ac7c402706bcd7864f8749eb85d7b17d1}{process\+Menu()} \+: Executes behaviour based on user selection.
+\item \doxylink{menu_8h_a9e496ae046ce217b202718937e53dd51}{show\+Menu()} \+: Main menu loop (runs until exit).
+\item \doxylink{menu_8h_ad09b68562d4d3f73fc80bbba617dfcb5}{MF1()} \+: Demonstrates basic array operations.
+\item \doxylink{menu_8h_a64d2417be94e4f4078733a76174a4472}{MF2()} \+: Demonstrates sorting and randomization.
+\item \doxylink{menu_8h_a18f29bae1fdb45ccfc087beed961dd5f}{MF3()} \+: Demonstrates full statistical analysis from user input. 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{menu_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_a9c57b99552cfba7791690c8f57fd3e97}\index{menu.h@{menu.h}!displayMenu@{displayMenu}}
+\index{displayMenu@{displayMenu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{displayMenu()}{displayMenu()}}
+{\footnotesize\ttfamily \label{menu_8h_a9c57b99552cfba7791690c8f57fd3e97} 
+void display\+Menu (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the main menu with available options. 
+
+Prints the following choices exactly\+: 1) Perform MF1 2) Perform MF2 3) Perform MF3 4) Exit Application
+
+This function only prints text; no input is handled here.
+
+Displays the main menu with available options.
+
+Prints a numbered list of available functions (MF1ñ\+MF3) and an option to exit the application. The user must enter a number (1ñ4) to continue.
+
+\begin{DoxyNote}{Note}
+This function does not take any input or return a value. Prints the menu options for the user. This function only prints textóno input is handled here. 
+\end{DoxyNote}
+\Hypertarget{menu_8h_ad09b68562d4d3f73fc80bbba617dfcb5}\index{menu.h@{menu.h}!MF1@{MF1}}
+\index{MF1@{MF1}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{MF1()}{MF1()}}
+{\footnotesize\ttfamily \label{menu_8h_ad09b68562d4d3f73fc80bbba617dfcb5} 
+void MF1 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Performs the operations defined for MF1. Typically\+: filling arrays, clearing, sorting, and finding min/max. 
+
+Performs the following\+:
+\begin{DoxyItemize}
+\item Creates array of capacity 10
+\item WF3\+: fill array with 7 random numbers (10‚Äì20)
+\item WF7\+: print used elements
+\item WF8\+: print all elements
+\item WF4\+: clear array
+\item WF7/\+WF8\+: reprint (empty array)
+\item WF3\+: fill array with 5 numbers (20‚Äì30)
+\item WF5\+: sort array
+\item WF8\+: print all elements
+\item WF9/\+WF10\+: print minimum and maximum
+\end{DoxyItemize}
+
+Performs the operations defined for MF1. Typically\+: filling arrays, clearing, sorting, and finding min/max.
+
+MF1 performs the following actions\+:
+\begin{DoxyEnumerate}
+\item Creates and prints arrays with used and unused elements.
+\item Clears one array completely.
+\item Displays another pre-\/defined array.
+\item Prints the minimum and maximum values of that array.
+\end{DoxyEnumerate}
+
+It helps demonstrate how ìusedî and ìunusedî markers (-\/1) are handled and how min/max functions operate. \Hypertarget{menu_8h_a64d2417be94e4f4078733a76174a4472}\index{menu.h@{menu.h}!MF2@{MF2}}
+\index{MF2@{MF2}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{MF2()}{MF2()}}
+{\footnotesize\ttfamily \label{menu_8h_a64d2417be94e4f4078733a76174a4472} 
+void MF2 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Performs the operations defined for MF2. Typically\+: randomizing and sorting array values. 
+
+Performs the following\+:
+\begin{DoxyItemize}
+\item Fills array with random values
+\item WF8\+: prints all values
+\item WF5\+: sorts used values
+\item WF8\+: prints sorted array
+\item WF6\+: randomizes array
+\item WF8\+: prints randomized array
+\end{DoxyItemize}
+
+Performs the operations defined for MF2. Typically\+: randomizing and sorting array values.
+
+MF2 performs the following\+:
+\begin{DoxyEnumerate}
+\item Fills an array with random integers in a range.
+\item Displays the unsorted (random) array.
+\item Sorts the array in ascending order.
+\item Randomizes the sorted array again.
+\end{DoxyEnumerate}
+
+\begin{DoxyNote}{Note}
+Uses functions from \doxylink{_arraycode_8c}{Arraycode.\+c} for sorting and randomization. 
+\end{DoxyNote}
+\Hypertarget{menu_8h_a18f29bae1fdb45ccfc087beed961dd5f}\index{menu.h@{menu.h}!MF3@{MF3}}
+\index{MF3@{MF3}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{MF3()}{MF3()}}
+{\footnotesize\ttfamily \label{menu_8h_a18f29bae1fdb45ccfc087beed961dd5f} 
+void MF3 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Performs the operations defined for MF3. Typically\+: keyboard input and computing statistical values. 
+
+Steps\+:
+\begin{DoxyItemize}
+\item Uses WF2 to read values from user
+\item Prints min and max (WF9, WF10)
+\item Prints all elements (WF8)
+\item Computes average (WF11)
+\item Computes median (WF12)
+\item Computes variance (WF13)
+\item Computes standard deviation (WF14)
+\end{DoxyItemize}
+
+Performs the operations defined for MF3. Typically\+: keyboard input and computing statistical values.
+
+MF3 allows the user to input integer values into an array. It then computes and displays\+:
+\begin{DoxyItemize}
+\item The number of used elements
+\item Minimum and maximum values
+\item Average and median values
+\item Variance and standard deviation
+\end{DoxyItemize}
+
+This function demonstrates how to combine input, sorting, and mathematical computations in one workflow.
+
+\begin{DoxyNote}{Note}
+Automatically ignores unused (-\/1) array entries. 
+\end{DoxyNote}
+\Hypertarget{menu_8h_ac7c402706bcd7864f8749eb85d7b17d1}\index{menu.h@{menu.h}!processMenu@{processMenu}}
+\index{processMenu@{processMenu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{processMenu()}{processMenu()}}
+{\footnotesize\ttfamily \label{menu_8h_ac7c402706bcd7864f8749eb85d7b17d1} 
+void process\+Menu (\begin{DoxyParamCaption}\item[{int}]{choice}{}\end{DoxyParamCaption})}
+
+
+
+Handles the user\textquotesingle{}s choice and performs the corresponding action. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em choice} & Integer selection entered by the user (1‚Äì4).\\
+\hline
+\end{DoxyParams}
+Depending on the value of {\ttfamily choice}\+:
+\begin{DoxyItemize}
+\item 1 ‚Üí \doxylink{menu_8h_ad09b68562d4d3f73fc80bbba617dfcb5}{MF1()} is executed
+\item 2 ‚Üí \doxylink{menu_8h_a64d2417be94e4f4078733a76174a4472}{MF2()} is executed
+\item 3 ‚Üí \doxylink{menu_8h_a18f29bae1fdb45ccfc087beed961dd5f}{MF3()} is executed
+\item 4 ‚Üí Exit message is printed
+\item Any other input prints an ‚Äúinvalid selection‚Äù message
+\end{DoxyItemize}
+
+Handles the user\textquotesingle{}s choice and performs the corresponding action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em choice} & The integer value entered by the user.\\
+\hline
+\end{DoxyParams}
+Based on the number entered, this function triggers\+:
+\begin{DoxyItemize}
+\item \doxylink{menu_8h_ad09b68562d4d3f73fc80bbba617dfcb5}{MF1()}\+: Basic array manipulation.
+\item \doxylink{menu_8h_a64d2417be94e4f4078733a76174a4472}{MF2()}\+: Randomization and sorting demonstration.
+\item \doxylink{menu_8h_a18f29bae1fdb45ccfc087beed961dd5f}{MF3()}\+: Statistical computation from user input.
+\item 4\+: Exits the program.
+\end{DoxyItemize}
+
+If the input is invalid (not 1ñ4), a warning message is displayed. Handles what to do when user enters a choice. Calls MF1, MF2, MF3 or exits depending on the number. \Hypertarget{menu_8h_a9e496ae046ce217b202718937e53dd51}\index{menu.h@{menu.h}!showMenu@{showMenu}}
+\index{showMenu@{showMenu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{showMenu()}{showMenu()}}
+{\footnotesize\ttfamily \label{menu_8h_a9e496ae046ce217b202718937e53dd51} 
+void show\+Menu (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Runs the main menu loop that keeps the program active until exit. 
+
+Continuously\+:
+\begin{DoxyEnumerate}
+\item Displays menu
+\item Reads user input
+\item Calls \doxylink{menu_8h_ac7c402706bcd7864f8749eb85d7b17d1}{process\+Menu()}
+\end{DoxyEnumerate}
+
+The loop terminates only when the user chooses option 4.
+
+Runs the main menu loop that keeps the program active until exit.
+
+Continuously displays the main menu, reads the user\textquotesingle{}s choice, and processes it using \doxylink{menu_8h_ac7c402706bcd7864f8749eb85d7b17d1}{process\+Menu()}. The loop terminates only when the user selects option 4 (Exit Application).
+
+\begin{DoxyNote}{Note}
+This is the main control loop for the program. Repeatedly shows the menu and reads input until the user picks 4. 
+\end{DoxyNote}

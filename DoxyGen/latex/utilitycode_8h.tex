@@ -1,0 +1,91 @@
+\doxysection{C\+:/\+Users/roshe/source/repos/\+Assiment-\/\+Roshen/\+Assiment-\/\+Roshen/utilitycode.h File Reference}
+\hypertarget{utilitycode_8h}{}\label{utilitycode_8h}\index{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/utilitycode.h@{C:/Users/roshe/source/repos/Assiment-\/Roshen/Assiment-\/Roshen/utilitycode.h}}
+
+
+Declares general-\/purpose utility functions used across the program.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{utilitycode_8h_a26927eafc4b6c937b626631935e6e9b7}{random\+Inrange}} (int lower, int upper)
+\begin{DoxyCompactList}\small\item\em Generates a random number within a specified range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utilitycode_8h_a5a34462b1d49ae892a343e5130d20a3c}{seed\+Random}} (void)
+\begin{DoxyCompactList}\small\item\em Seeds the random number generator using current time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declares general-\/purpose utility functions used across the program. 
+
+This module provides helper functions that are not tied to specific working functions but are required throughout the project. The primary utility implemented here is the random number generator, which returns numbers in an inclusive range.
+
+Functions in this module include\+:
+\begin{DoxyItemize}
+\item \doxylink{utilitycode_8h_a26927eafc4b6c937b626631935e6e9b7}{random\+Inrange()} \+: Returns a random integer within a specified range.
+\end{DoxyItemize}
+
+These functions are used by several Working Functions, such as WF3 (random fill) and WF6 (randomize/shuffle), as well as menu operations MF1–\+MF3. 
+
+\label{doc-func-members}
+\Hypertarget{utilitycode_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{utilitycode_8h_a26927eafc4b6c937b626631935e6e9b7}\index{utilitycode.h@{utilitycode.h}!randomInrange@{randomInrange}}
+\index{randomInrange@{randomInrange}!utilitycode.h@{utilitycode.h}}
+\doxysubsubsection{\texorpdfstring{randomInrange()}{randomInrange()}}
+{\footnotesize\ttfamily \label{utilitycode_8h_a26927eafc4b6c937b626631935e6e9b7} 
+int random\+Inrange (\begin{DoxyParamCaption}\item[{int}]{lower}{, }\item[{int}]{upper}{}\end{DoxyParamCaption})}
+
+
+
+Generates a random number within a specified range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower} & The minimum value (inclusive). \\
+\hline
+{\em upper} & The maximum value (inclusive). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A random integer between lower and upper.
+\end{DoxyReturn}
+This function relies on the standard {\ttfamily rand()} function. The caller must ensure that {\ttfamily srand(time(\+NULL))} has been called once at program startup (this is handled in main.\+c). Behavior is undefined if {\ttfamily lower \texorpdfstring{$>$}{>} upper}.
+
+Generates a random number within a specified range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower} & The minimum integer value (inclusive). \\
+\hline
+{\em upper} & The maximum integer value (inclusive). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A random number between lower and upper. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Used by\+:
+\begin{DoxyItemize}
+\item WF3 \+: \doxylink{_arraycode_8c_afdc91fb4d3e02b32aac27b2ead725923}{fillarraywith\+Randno()}
+\item WF6 \+: randomizearray() 
+\end{DoxyItemize}
+\end{DoxyNote}
+\Hypertarget{utilitycode_8h_a5a34462b1d49ae892a343e5130d20a3c}\index{utilitycode.h@{utilitycode.h}!seedRandom@{seedRandom}}
+\index{seedRandom@{seedRandom}!utilitycode.h@{utilitycode.h}}
+\doxysubsubsection{\texorpdfstring{seedRandom()}{seedRandom()}}
+{\footnotesize\ttfamily \label{utilitycode_8h_a5a34462b1d49ae892a343e5130d20a3c} 
+void seed\+Random (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Seeds the random number generator using current time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Should} & be called once at the start of main().\\
+\hline
+\end{DoxyParams}
+Seeds the random number generator using current time. 
